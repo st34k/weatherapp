@@ -56,8 +56,12 @@ function addComment (addCom){
   // console.log($appendCommentDiv);
 };
 
-function deleteCity (deletecity){                   //remove city information (from DOM only!!)
-   $(deletecity).closest('div').parent().remove();
+function deleteCity (deletecity){                   //remove city information (DOM and localStorge)
+  var indexOfCity = $(deletecity).closest('.delete-city-div').closest('.addedCity').index();
+  cities.splice(indexOfCity,1);
+  $(deletecity).closest('div').parent().remove();  
+  saveToLocalStorage();
+   // console.log(indexOfCity);
 };
 
 
@@ -89,4 +93,4 @@ $('.city-div').on('click', '.delete-city', function(){
 
 });
 
-loadAll();
+loadAll();        //Load everything from the local storage on startup
