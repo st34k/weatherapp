@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+<script src = "node_modules/jquery/dist/jquery.min.js"></script>
+  <title>
+    WeatherChat
+  </title>
+</head>
+<body>
+
+
+  <div class = "header">
+      <h1>Weather Chat</h1>
+  </div>    
+ 
+  <div class="container main">
+     <form>
+       <div class="form-group row">
+         <div class="col-sm-8">
+           <input type="city" class="form-control form-control-lg" id="city" placeholder="Type in City Name">
+         </div>
+          <div class="offset-sm-2 col-sm-4">
+           <button type="search" class="btn btn-primary">Get Temp</button>
+         </div>
+       </div>
+     </form>
+ </div>
+
+ <div class = "city-div">  
+ </div>
+
+<script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
+<script id="weather-template" type="text/x-handlebars-template">
+  <div class = "addedCity">
+    <h2>{{cityName}}</h2>
+    <h3 >{{tempC}}&degC / {{tempF}}&degF</h3>
+    <h4>At time: {{dateTime}}</h4>
+  </div>
+</script>
+
+<script src="script.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

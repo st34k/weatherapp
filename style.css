@@ -1,0 +1,23 @@
+.main {
+  margin-top: 5%;
+}
+
+.header {
+  margin:3%;
+}
+
+.changeFont {
+  font-family:Verdana;
+}
+
+.city-div{
+  width:90%;
+  margin:auto;
+}
+.addedCity {
+  border: 1px solid black;
+  box-shadow: 1px 1px blue;
+  width:80%;
+  margin: 10px 0px;
+  
+}
