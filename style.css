@@ -11,13 +11,33 @@
 }
 
 .addedCity {
+  margin:auto;
+  margin-top:5%;
   width:90%;
   border: 1px solid lightgray;
   box-shadow: lightblue 1px 1px;
+  position:relative;
+  padding: 2%;
 }
+
+.delete-city{
+  position:absolute;
+  right:2%;
+  top: 3%;
+  font-size:2em;
+  color:red;
+  padding:2px;
+  border:0.5px solid red;
+  background-color:lightgray;
+}
+
 
 .add-comment-div{
   width:80%;
   display:inline-block;
+}
+
+#comm {
+  font-size:1em;
 }
 

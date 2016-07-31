@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.css"/>
+
 <script src = "node_modules/jquery/dist/jquery.min.js"></script>
   <title>
     WeatherChat
@@ -33,7 +35,11 @@
 
 <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
 <script id="weather-template" type="text/x-handlebars-template">
+  {{#each cities}}
   <div class = "addedCity">
+    <div class = "delete-city">
+      <i class="fa fa-trash-o delete-city" aria-hidden="true"></i>
+    </div>
     <h2>{{cityName}}</h2>
     <h3 >{{tempC}}&degC / {{tempF}}&degF</h3>
     <h4>At time: {{dateTime}}</h4>
@@ -50,6 +56,7 @@
     <div class = "comments-display">
     </div>
   </div>
+{{/each}}
 
   
 </script>

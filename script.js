@@ -1,9 +1,22 @@
 
+
+var STORAGE_ID = 'cityweather';
 var source = $('#weather-template').html();
 var template = Handlebars.compile(source);
 
+var getFromLocalStorage = function () {
+    return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+  }
 
-var searchCityApi = function (getUserCity){
+var saveToLocalStorage = function () {
+  localStorage.setItem(STORAGE_ID, JSON.stringify(cities));
+  };
+
+
+var cities = getFromLocalStorage();
+ 
+
+var searchCityApi = function (getUserCity){     //search the API for the user's city
   
   $.get("http://api.openweathermap.org/data/2.5/weather?q="+getUserCity+"&appid=d703871f861842b79c60988ccf3b17ec", function(city){
     
@@ -23,20 +36,38 @@ var searchCityApi = function (getUserCity){
       dateTime : dateTime
     };
 
-    var newHTML = template(city);
+    cities.push(city);                       //push the object with the information into the array
+    saveToLocalStorage();
+    console.log(cities);                          //test array
 
+
+    var newHTML = template(city);                 //append
     $('.city-div').append(newHTML);
   });
 
-    
 
 }
 
 
 function addComment (addCom){
   var getComment = $(addCom).closest('div').prev().find('#comment').val();
-  $(".comments-display").append('<div id = "comm">' + getComment + '</div>');
+  var $appendCommentDiv = $(addCom).closest('div').closest('.add-comment-div').next('.comments-display');
+  $appendCommentDiv.append('<div id = "comm">' + getComment + '</div>');
+  // console.log($appendCommentDiv);
 };
+
+function deleteCity (deletecity){                   //remove city information (from DOM only!!)
+   $(deletecity).closest('div').parent().remove();
+};
+
+
+function loadAll(){                 //load all from LocalStorage on page load
+  $('city-div').empty();
+  console.log(cities);
+  var newHTML = template({cities});                 //append from the array - must use curly braces for handlebars
+  // console.log(newHTML);
+  $('.city-div').append(newHTML);
+}
 
 
 $('.btn').on('click', function (e) {
@@ -50,5 +81,12 @@ $('.btn').on('click', function (e) {
 $('.city-div'). on ('click', '.btn-success', function(){
   
   addComment(this);
-  // console.log(getComment);
  });
+
+$('.city-div').on('click', '.delete-city', function(){
+  deleteCity(this);
+
+
+});
+
+loadAll();
