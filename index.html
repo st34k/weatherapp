@@ -15,7 +15,7 @@
       <h1>Weather Chat</h1>
   </div>    
  
-  <div class="container main">
+  <div class="container form">
      <form>
        <div class="form-group row">
          <div class="col-sm-8">
@@ -37,7 +37,21 @@
     <h2>{{cityName}}</h2>
     <h3 >{{tempC}}&degC / {{tempF}}&degF</h3>
     <h4>At time: {{dateTime}}</h4>
+
+    <div class = "add-comment-div">
+      <div class="col-sm-8 comment-input">
+        <input type="comment" class="form-control form-control-lg" id="comment" placeholder="Your comment">
+      </div>
+        <div class="offset-sm-2 col-sm-4 comment-button">
+          <button type="search" class="btn btn-success">Comment</button>
+        </div>
+    </div> 
+
+    <div class = "comments-display">
+    </div>
   </div>
+
+  
 </script>
 
 <script src="script.js" type="text/javascript"></script>

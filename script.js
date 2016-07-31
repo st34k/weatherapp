@@ -15,6 +15,7 @@ var searchCityApi = function (getUserCity){
     var tempC = Math.round(city.main.temp - 273.15);          //Convert temp to Celsius
     var tempF = Math.round(city.main.temp * (9/5) -459.67);   //Convert temp to Fahrenheit
     var dateTime = new Date();                                //get search date
+
     var city = {
       cityName : cityName,
       tempC : tempC,
@@ -32,10 +33,22 @@ var searchCityApi = function (getUserCity){
 }
 
 
+function addComment (addCom){
+  var getComment = $(addCom).closest('div').prev().find('#comment').val();
+  $(".comments-display").append('<div id = "comm">' + getComment + '</div>');
+};
+
+
 $('.btn').on('click', function (e) {
   e.preventDefault();
-  var getUserCity = $('input').val();
+  var getUserCity = $('#city').val();
   // var city = getUserCity.split(" ").join("+");
   searchCityApi(getUserCity);
   
 });
+
+$('.city-div'). on ('click', '.btn-success', function(){
+  
+  addComment(this);
+  // console.log(getComment);
+ });

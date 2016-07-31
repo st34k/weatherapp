@@ -10,14 +10,14 @@
   font-family:Verdana;
 }
 
-.city-div{
-  width:90%;
-  margin:auto;
-}
 .addedCity {
-  border: 1px solid black;
-  box-shadow: 1px 1px blue;
-  width:80%;
-  margin: 10px 0px;
-  
+  width:90%;
+  border: 1px solid lightgray;
+  box-shadow: lightblue 1px 1px;
 }
+
+.add-comment-div{
+  width:80%;
+  display:inline-block;
+}
+
