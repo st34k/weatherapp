@@ -33,6 +33,7 @@
  <div class = "city-div">  
  </div>
 
+
 <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
 <script id="weather-template" type="text/x-handlebars-template">
   {{#each cities}}
@@ -42,7 +43,7 @@
     </div>
     <h2>{{cityName}}</h2>
     <h3 >{{tempC}}&degC / {{tempF}}&degF</h3>
-    <h4>At time: {{dateTime}}</h4>
+    <h4>Search time: {{dateTime}}</h4>
 
     <div class = "add-comment-div">
       <div class="col-sm-8 comment-input">
@@ -56,11 +57,11 @@
     <div class = "comments-display">
     </div>
   </div>
-{{/each}}
+  {{/each}}
 
   
 </script>
-
+<script src="datejs/date.js" type="text/javascript"></script>
 <script src="script.js" type="text/javascript"></script>
 
 
