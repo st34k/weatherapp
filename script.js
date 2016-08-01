@@ -104,3 +104,5 @@ $('.city-div').on('click', '.delete-city', function(){
 });
 
 loadAll();        //Load everything from the local storage on startup
+
+$('.menu').dropit();

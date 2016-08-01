@@ -15,6 +15,18 @@
 
   <div class = "header">
       <h1>Weather Chat</h1>
+      <div class = "menu-div">
+        <ul class="menu">
+          <li>
+              <a href="#">Dropdown</a>
+              <ul>
+                  <li><a href="#">Some Action 1</a></li>
+                  <li><a href="#">Some Action 2</a></li>
+                  <li><a href="#">Some Action 3</a></li>
+                  <li><a href="#">Some Action 4</a></li>
+              </ul>
+          </li>
+        </ul>
   </div>    
  
   <div class="container form">
@@ -35,6 +47,7 @@
 
 
 <script src="node_modules/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
+<script src="Dropit-1.1.1/dropit.js" type="text/javascript"></script>
 <script id="weather-template" type="text/x-handlebars-template">
   {{#each cities}}
   <div class = "addedCity">
@@ -61,7 +74,7 @@
 
   
 </script>
-<script src="datejs/date.js" type="text/javascript"></script>
+<!-- <script src="datejs/date.js" type="text/javascript"></script> -->
 <script src="script.js" type="text/javascript"></script>
 
 
